@@ -1,13 +1,17 @@
 import './NavBar.css';
 import {useState} from "react";
 import {Link} from "react-router-dom";
+import Logo from '../assets/logo.png';
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
             <nav className="navbar">
-                <div className="logo"><Link to="/">Go Ducky</Link></div>
+                <div className="logo">
+                    <img src={Logo} alt="Logo" className="logo-img"/>
+                    <Link to="/">Go Ducky</Link>
+                </div>
                 {/* Hamburger Menu */}
                 <div className="burger" onClick={() => setIsOpen(!isOpen)}>
                     ☰
