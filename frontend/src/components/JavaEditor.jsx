@@ -55,9 +55,10 @@ public class Main {
                     <div className="editor">
                         <Editor
                             height="100%"
+                            width="100%"
                             defaultLanguage="java"
                             value={code}
-                            theme="vs-light-2"
+                            theme="vs-light"
                             options={{
                                 fontSize: 16, // Set font size dynamically
                             }}
