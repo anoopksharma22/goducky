@@ -2,21 +2,17 @@ import {useState} from "react";
 import Editor from "@monaco-editor/react";
 import {RiResetLeftLine} from "react-icons/ri";
 const JavaEditor = () => {
-    const [code, setCode] = useState(`// Do not rename to class name
+    const initialCode = `// Do not rename the class name
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, Java!");
     }
-}`);
+}`;
+    const [code, setCode] = useState(initialCode);
     const [output, setOutput] = useState("Waiting for output...");
     const [loading, setLoading] = useState(false);
     const handleReset = async () => {
-        setCode(`// Do not rename to class name
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello, Java!");
-    }
-}`);
+        setCode(initialCode);
         setOutput("Waiting for output...");
 
     };
@@ -74,7 +70,7 @@ public class Main {
                 </div>
 
                 <div className="output">
-                    <p>Output:</p>
+                    <p>Output</p>
                     <pre className="output-text">
                         {output}
                     </pre>

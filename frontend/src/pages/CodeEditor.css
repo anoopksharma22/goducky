@@ -12,6 +12,7 @@
     padding: 10px;
     background-color: #fff;
     /*color: white;*/
+    border-bottom: 1px solid #b3b3b3;
 }
 .editor{
     height: 70vh;
@@ -53,6 +54,7 @@
 }
 .output p{
     padding: 10px;
+    border-bottom: 1px solid #b3b3b3;
 }
 
 .output .output-text{
