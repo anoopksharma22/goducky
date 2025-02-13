@@ -1,16 +1,42 @@
 version: '3.8'
 services:
-  backend:
-    build: ./backend
-    container_name: backend
-    restart: always
+  execution:
+    build: ./execution
+    container_name: goducky-execution-ms
     ports:
       - "8080:8080"
 
-  app:
+  frontend:
     build: ./frontend
-    container_name: itsanoop.in
+    container_name: goducky-web
     ports:
       - "3000:80"
-    restart: always
 
+  article:
+    build: ./article
+    container_name: goducky-article-ms
+    ports:
+      - "5000:5000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d postgres" ]
+      interval: 5s
+      retries: 5
+      timeout: 3s
+    volumes:
+      - data:/var/lib/postgresql/data
+volumes:
+  data:
