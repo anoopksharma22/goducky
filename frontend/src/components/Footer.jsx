@@ -2,6 +2,7 @@ import "./Footer.css";
 import { CiLinkedin } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import { CiLink } from "react-icons/ci";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -9,16 +10,17 @@ const Footer = () => {
             <div className="footer-container">
                 {/* Left Section */}
                 <div className="footer-left">
-                    <h2>GoDucky.in</h2>
-                    <p>© 2025 Anoop Sharma. All rights reserved.</p>
+                    {/*<h2>GoDucky.in</h2>*/}
+                    <p>© 2025 GoDucky All rights reserved.</p>
                 </div>
 
                 {/* Center Section */}
                 <nav className="footer-nav">
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/articles">About</Link></li>
+                        <li><Link to="/how-to">How To</Link></li>
+                        <li><Link to="/code-editor">Code Editor</Link></li>
                     </ul>
                 </nav>
 
