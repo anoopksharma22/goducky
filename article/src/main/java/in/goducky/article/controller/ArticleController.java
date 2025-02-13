@@ -25,4 +25,9 @@ public class ArticleController {
         articleService.createArticle(article);
     }
 
+    @GetMapping("/dummy")
+    public String fetchDummyArticles() {
+        return articleService.parseMd();
+    }
+
 }

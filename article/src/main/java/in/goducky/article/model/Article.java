@@ -65,4 +65,15 @@ public class Article {
         this.createdTimestamp = createdTimestamp;
     }
 
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", author='" + author + '\'' +
+                ", active=" + active +
+                ", createdTimestamp=" + createdTimestamp +
+                '}';
+    }
 }
