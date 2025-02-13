@@ -6,15 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="backend" />
+        <module name="execution" />
         <module name="article" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="execution_engine" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="article" options="-parameters" />
-      <module name="backend" options="-parameters" />
+      <module name="execution" options="-parameters" />
+      <module name="execution_engine" options="-parameters" />
     </option>
   </component>
 </project>
