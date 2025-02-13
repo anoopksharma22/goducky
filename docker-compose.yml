@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: always
+    ports:
+      - "8080:8080"
+
+  app:
+    build: ./frontend
+    container_name: itsanoop.in
+    ports:
+      - "3000:80"
+    restart: always
+

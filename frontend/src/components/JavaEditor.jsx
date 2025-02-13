@@ -21,7 +21,7 @@ public class Main {
         setOutput("Running...");
 
         try {
-            const url = "http://localhost:8080/api/execution/execute";
+            const url = " http://localhost:8080/api/execution/execute";
             console.log(url);
             const response = await fetch(url, {
                 method: "POST",
