@@ -1,6 +1,6 @@
 import './NavBar.css';
 import {useState} from "react";
-import {Link} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 import Logo from '../assets/logo.png';
 
 const NavBar = () => {
@@ -17,10 +17,10 @@ const NavBar = () => {
                     ☰
                 </div>
                 <ul className={`nav-links ${isOpen ? "active" : ""}`}>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/articles">Articles</Link></li>
-                    <li><Link to="/how-to">How To?</Link></li>
-                    <li><Link to="/code-editor">Code Editor</Link></li>
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/articles">Articles</NavLink></li>
+                    <li><NavLink to="/how-to">How To?</NavLink></li>
+                    <li><NavLink to="/code-editor">Code Editor</NavLink></li>
                 </ul>
             </nav>
         </>
