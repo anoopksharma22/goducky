@@ -1,6 +1,7 @@
 CREATE TABLE article (
                          id SERIAL PRIMARY KEY,
                          title VARCHAR(255) NOT NULL,
+                         summary TEST NOT null,
                          content TEXT NOT NULL,
                          author VARCHAR(255) NOT NULL,
                          type VARCHAR(50),

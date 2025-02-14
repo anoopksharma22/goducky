@@ -1,20 +1,15 @@
-package in.goducky.article.model;
-
-import jakarta.persistence.*;
+package in.goducky.article.dtos;
 
 import java.time.LocalDateTime;
 
-@Entity
-public class Article {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class AllArticlesDto {
+
     private int id;
 
     private String title;
 
     private String summary;
 
-    @Column(columnDefinition = "TEXT")
     private String content;
 
     private String author;
@@ -23,8 +18,7 @@ public class Article {
 
     private boolean active;
 
-    private LocalDateTime createdTimestamp = LocalDateTime.now();
-
+    private LocalDateTime createdTimestamp;
 
     public int getId() {
         return id;
@@ -92,7 +86,7 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Article{" +
+        return "AllAtriclesDto{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", summary='" + summary + '\'' +

@@ -4,10 +4,15 @@ import com.vladsch.flexmark.util.ast.Node;
 import com.vladsch.flexmark.html.HtmlRenderer;
 import com.vladsch.flexmark.parser.Parser;
 import com.vladsch.flexmark.util.data.MutableDataSet;
+import in.goducky.article.dtos.AllArticlesDto;
+import in.goducky.article.dtos.OneArticlesDto;
+import in.goducky.article.mappers.ArticleToAllArticlesDtoMapper;
+import in.goducky.article.mappers.ArticleToOneArticlesDtoMapper;
 import in.goducky.article.model.Article;
 import in.goducky.article.repository.ArticleRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,17 +23,25 @@ public class ArticleService {
         this.articleRepository = articleRepository;
     }
 
-    public List<Article> findAll() {
-        return articleRepository.findAll();
+    public List<AllArticlesDto> findAll() {
+        List<AllArticlesDto> allArticlesDto = new ArrayList<>();
+        for(Article a: articleRepository.findAll()){
+            allArticlesDto.add(ArticleToAllArticlesDtoMapper.map(a));
+        }
+        return allArticlesDto;
     }
 
     public void createArticle(Article article) {
+        String title = article.getContent().split("\\n")[0].replaceFirst("^#*\\s*", "");
+        article.setAuthor("Go Ducky");
+        article.setActive(true);
+        article.setSummary("dummy");
+        article.setTitle(title);
         articleRepository.save(article);
     }
 
-    public String parseMd() {
+    public String parseMd(String md) {
         MutableDataSet options = new MutableDataSet();
-
         // uncomment to set optional extensions
         //options.set(Parser.EXTENSIONS, Arrays.asList(TablesExtension.create(), StrikethroughExtension.create()));
 
@@ -39,9 +52,19 @@ public class ArticleService {
         HtmlRenderer renderer = HtmlRenderer.builder(options).build();
 
         // You can re-use parser and renderer instances
-        Article a = articleRepository.findById(11).get();
-        Node document = parser.parse(a.getContent());
-        String html = renderer.render(document);  // "<p>This is <em>Sparta</em></p>\n"
-        return html;
+        Node document = parser.parse(md);
+        return renderer.render(document);
+    }
+
+    public OneArticlesDto findById(int id) {
+        Article article =  articleRepository.findById(id).orElse(null);
+        assert article != null;
+        return ArticleToOneArticlesDtoMapper.map(article);
+    }
+
+    public String findByIdParsed(int id) {
+        Article article =  articleRepository.findById(id).orElse(null);
+        assert article != null;
+        return parseMd(article.getContent());
     }
 }

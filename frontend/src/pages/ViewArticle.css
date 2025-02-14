@@ -1,0 +1,129 @@
+.view-article{
+    width:70vw;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 0 auto;
+    color: #2c2c2c;
+    transition: 0.2s ease;
+}
+
+/* Base styles for markdown content */
+.view-article {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Headings */
+.view-article h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.view-article h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 18px;
+}
+
+.view-article h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Paragraphs */
+.view-article p {
+    margin: 10px 0;
+}
+
+/* Lists */
+.view-article ul, .view-article ol {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.view-article li {
+    margin-bottom: 5px;
+}
+
+/* Blockquotes */
+.view-article blockquote {
+    border-left: 4px solid #007acc;
+    background: #f4f4f4;
+    padding: 10px;
+    margin: 10px 0;
+    font-style: italic;
+    color: #555;
+}
+
+/* Code Blocks */
+.view-article pre {
+    background: #1e1e1e;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: "Courier New", monospace;
+}
+
+.view-article code {
+    background: #eee;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: "Courier New", monospace;
+    color: #d63384;
+}
+
+.view-article pre code {
+    background: none;
+    padding: 0;
+    color: #f8f8f2;
+}
+
+/* Links */
+.view-article a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.view-article a:hover {
+    text-decoration: underline;
+}
+
+/* Tables */
+.view-article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.view-article th, .view-article td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.view-article th {
+    background: #007acc;
+    color: white;
+}
+
+/* Images */
+.view-article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+    border-radius: 5px;
+}

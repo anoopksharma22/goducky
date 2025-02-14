@@ -5,6 +5,8 @@ import PageNotFound from "./pages/PageNotFound.jsx";
 import Articles from "./pages/Articles.jsx";
 import HowTo from "./pages/HowTo.jsx";
 import CodeEditor from "./pages/CodeEditor.jsx";
+import ArticlesEditor from "./pages/ArticlesEditor.jsx";
+import ViewArticle from "./pages/ViewArticle.jsx";
 
 
 const router = createBrowserRouter(
@@ -14,6 +16,8 @@ const router = createBrowserRouter(
           <Route path="/articles" element={<Articles />}/>
           <Route path="/how-to" element={<HowTo />}/>
           <Route path="/code-editor" element={<CodeEditor />}/>
+          <Route path="/article-editor" element={<ArticlesEditor />}/>
+          <Route path="/articles/:id" element={<ViewArticle />}/>
           <Route path="*" element={<PageNotFound />}/>
       </Route>
   )

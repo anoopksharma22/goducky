@@ -1,0 +1,29 @@
+.article-editor-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin: 0 auto;
+}
+.save-md-button{
+    align-self: flex-end;
+    margin: 5px 0;
+}
+.article-editor-preview-container{
+    display: flex;
+    gap: 20px;
+}
+.article-editor{
+    min-width: 40vw;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-preview{
+    min-width: 40vw;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    font-size: 14px;
+    padding: 20px;
+}
+

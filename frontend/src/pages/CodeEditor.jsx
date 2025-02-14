@@ -1,11 +1,11 @@
 import './CodeEditor.css';
 import JavaEditor from "../components/JavaEditor.jsx";
-import RotateScreenPrompt from "../components/RotateScreenPrompt.jsx";
+// import RotateScreenPrompt from "../components/RotateScreenPrompt.jsx";
 
 const CodeEditor = () => {
     return (
         <>
-            <RotateScreenPrompt />
+            {/*<RotateScreenPrompt />*/}
             <JavaEditor />
         </>
     );
